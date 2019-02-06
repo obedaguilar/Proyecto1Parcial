@@ -1223,3 +1223,28 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+#grande{
+  margin: 0px;
+    /*background: rgba(255,255,255,.8);*/
+    text-align: justify;
+    padding: 15px;
+
+    font-size: 20px;
+    opacity: 0.9;
+    color: white;
+    /*width: 100%;*/
+
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    transition: opacity 1s, -webkit-border-radius 1s, -webkit-transform 1s;
+    border-radius: 15px 10px 15px 10px;
+    transform: scale(1,1);
+    -webkit-border-radius:  40px;
+    /*box-shadow: 0px 0px 10px rgba(10,40,230,0.4);*/  
+}
+#grande:hover{
+    opacity: 1;
+    -webkit-border-radius: 20px;
+    transform: scale(1.20,1.15);   
+}
+
