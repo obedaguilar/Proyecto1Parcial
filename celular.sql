@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 06-02-2019 a las 07:14:54
--- Versión del servidor: 5.7.24
--- Versión de PHP: 7.2.14
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 12-02-2019 a las 19:41:18
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,52 +25,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `audio`
---
-
-DROP TABLE IF EXISTS `audio`;
-CREATE TABLE IF NOT EXISTS `audio` (
-  `idAudio` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) DEFAULT NULL,
-  `Descripcion` varchar(500) DEFAULT NULL,
-  `audio_prueba` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idAudio`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `camara`
---
-
-DROP TABLE IF EXISTS `camara`;
-CREATE TABLE IF NOT EXISTS `camara` (
-  `idCamara` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) DEFAULT NULL,
-  `Descripcion` varchar(500) DEFAULT NULL,
-  `img_foto` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idCamara`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `celular`
 --
 
-DROP TABLE IF EXISTS `celular`;
-CREATE TABLE IF NOT EXISTS `celular` (
-  `idCelular` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `celular` (
+  `idCelular` int(11) NOT NULL,
   `Modelo` varchar(45) DEFAULT NULL,
-  `V_promo` varchar(500) DEFAULT NULL,
-  `im_celular` varchar(45) DEFAULT NULL,
   `Rendimiento_des` varchar(500) DEFAULT NULL,
-  `idCamara` int(11) NOT NULL,
   `idPantalla` int(11) NOT NULL,
-  `idAudio` int(11) NOT NULL,
   `idSeguridad` int(11) NOT NULL,
-  `idMarca` int(11) NOT NULL,
-  PRIMARY KEY (`idCelular`)
+  `idMarca` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -79,12 +43,10 @@ CREATE TABLE IF NOT EXISTS `celular` (
 -- Estructura de tabla para la tabla `for_pago`
 --
 
-DROP TABLE IF EXISTS `for_pago`;
-CREATE TABLE IF NOT EXISTS `for_pago` (
-  `idFor_Pago` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `for_pago` (
+  `idFor_Pago` int(11) NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
-  `Descripcion` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idFor_Pago`)
+  `Descripcion` varchar(500) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -93,8 +55,7 @@ CREATE TABLE IF NOT EXISTS `for_pago` (
 -- Estructura de tabla para la tabla `for_pago_has_celular`
 --
 
-DROP TABLE IF EXISTS `for_pago_has_celular`;
-CREATE TABLE IF NOT EXISTS `for_pago_has_celular` (
+CREATE TABLE `for_pago_has_celular` (
   `idFor_Pago` int(11) NOT NULL,
   `idCelular` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -105,11 +66,9 @@ CREATE TABLE IF NOT EXISTS `for_pago_has_celular` (
 -- Estructura de tabla para la tabla `marca`
 --
 
-DROP TABLE IF EXISTS `marca`;
-CREATE TABLE IF NOT EXISTS `marca` (
-  `idMarca` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idMarca`)
+CREATE TABLE `marca` (
+  `idMarca` int(11) NOT NULL,
+  `Nombre` varchar(45) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -118,11 +77,11 @@ CREATE TABLE IF NOT EXISTS `marca` (
 -- Estructura de tabla para la tabla `pantalla`
 --
 
-DROP TABLE IF EXISTS `pantalla`;
-CREATE TABLE IF NOT EXISTS `pantalla` (
-  `idPantalla` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pantalla` (
+  `idPantalla` int(11) NOT NULL,
   `Caracteristicas` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idPantalla`)
+  `Nombre` varchar(50) NOT NULL,
+  `link` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -131,13 +90,79 @@ CREATE TABLE IF NOT EXISTS `pantalla` (
 -- Estructura de tabla para la tabla `seguridad`
 --
 
-DROP TABLE IF EXISTS `seguridad`;
-CREATE TABLE IF NOT EXISTS `seguridad` (
-  `idSeguridad` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `seguridad` (
+  `idSeguridad` int(11) NOT NULL,
   `Nombre` varchar(45) DEFAULT NULL,
-  `Descripcion` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`idSeguridad`)
+  `Descripcion` varchar(500) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `celular`
+--
+ALTER TABLE `celular`
+  ADD PRIMARY KEY (`idCelular`);
+
+--
+-- Indices de la tabla `for_pago`
+--
+ALTER TABLE `for_pago`
+  ADD PRIMARY KEY (`idFor_Pago`);
+
+--
+-- Indices de la tabla `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`idMarca`);
+
+--
+-- Indices de la tabla `pantalla`
+--
+ALTER TABLE `pantalla`
+  ADD PRIMARY KEY (`idPantalla`);
+
+--
+-- Indices de la tabla `seguridad`
+--
+ALTER TABLE `seguridad`
+  ADD PRIMARY KEY (`idSeguridad`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `celular`
+--
+ALTER TABLE `celular`
+  MODIFY `idCelular` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `for_pago`
+--
+ALTER TABLE `for_pago`
+  MODIFY `idFor_Pago` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `marca`
+--
+ALTER TABLE `marca`
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pantalla`
+--
+ALTER TABLE `pantalla`
+  MODIFY `idPantalla` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `seguridad`
+--
+ALTER TABLE `seguridad`
+  MODIFY `idSeguridad` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
