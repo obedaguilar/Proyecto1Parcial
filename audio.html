@@ -4,59 +4,147 @@
     <title>Mesa Interactiva</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!--Estilos de la camara no mover!!-->
+      <!--Estilos de audio no mover!!-->
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="assets/fancybox/jquery.fancybox-1.3.4.css" />
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+   
+    <link rel="stylesheet" href="css/main.css" /> 
+    <!-- AUDIO css-->
+		<link rel="stylesheet" href="css/jquery.equalizer.css" />
+    
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     
-	  
-	  <!--
-   
-     <audio id="mireproductor" src="piano.mp3"></audio>
-<div>
-    <button onclick="document.getElementById('player').play()">Play</button>
-    <button onclick="document.getElementById('player').pause()">Pausa</button>
-    <button onclick="document.getElementById('player').load()">Stop</button>
-    <button onclick="document.getElementById('player').volume += .1">Subir volumen</button>
-    <button onclick="document.getElementById('player').volume -= .1">Bajar volumen</button>
-	
-	
-	
-	
-	<script>
-	  
-	  
-      var v = document.getElementsByTagName("mireproductor")[0];
-      v.play();
-
-	  </script> 
-
-
-
-</div> 
-
-  -->
-                <audio controls autoplay>
-	  
-	  <source src="./audios/piano.mp3"
-			  type="audio/mpeg">
-	  </audio>
-	  
- 
-	  
-         <!--Acá agregamos la interfaz de audio para el documento y filtrado de la imagen para mostrarlo-->
-      
+    <header role="banner">
      
-  </body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Mesa Interactiva</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Pantalla</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="multimedia.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Multimedia</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="multimedia.html">Cámara</a>
+                  <a class="dropdown-item" href="audio.html">Audio</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Rendimiento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Seguridad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Costo</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/solid.jpg);">
+      
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-8 text-center">
+
+            <div class="mb-5 element-animate">
+
+               <!-- loader -->
+   <script type="text/javascript"
+   src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+   </script></div>
+   <div class="jquery-script-clear"></div>
+   </div>
+  
+     
+     
+     <div class="relative_left" style="width: 800px;margin: 10px 0px;height: -100px;left : -5%;margin-left: -600px;">
+       
+
+       
+         <div class="song1 equalizer"></div>
+         <audio controls loop id="song1">
+           <source src="musica/piano.mp3" type='audio/ogg'>
+         </audio>
+       
+
+       <p>
+         <div class="song2 equalizer"></div>
+         <audio controls loop id="song2">
+           <source src="musica/NITA.mp3" type='audio/ogg'>
+         </audio>
+       </p>
+       
+       </div>
+              
+
+</section>
+
+  
+
+      
+         <!--Funciones javascript con la api de equlizer-->
+      
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script type="text/javascript" src="js/jquery.reverseorder.js"></script>
+         <script type="text/javascript" src="js/jquery.equalizer.js"></script>
+         <script>
+           $(document).ready(function(){
+             $('#song1').equalizer({
+               color: "#f2b400",
+               color1: '#a94442',
+               color2: '#f2b400'
+             });
+             $('#song2').equalizer();
+           });
+         </script>
+       </body>
+       
+       <script type="text/javascript">
+     
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-36251023-1']);
+       _gaq.push(['_setDomainName', 'jqueryscript.net']);
+       _gaq.push(['_trackPageview']);
+     
+       (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+     
+     </script>
+  
+      
+      
+  
 </html>
-
-
-
-
-
-
-
-
-
-
-
