@@ -152,11 +152,6 @@ header .navbar.navbar-light .nav-link.active {
 .site-hero.overlay h1, .site-hero.overlay p {
   color: #fff;
 }
-.site-hero.overlay h4{
-  font-size: 70px;
-}
-.site-hero.overlay h4, .site-hero.overlay p {
-  color: #fff;
 
 .site-hero .site-hero-inner {
   min-height: 750px;
