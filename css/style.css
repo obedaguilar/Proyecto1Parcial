@@ -19,8 +19,9 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5 {
-  color: #000;
+  color: #fff;
   font-family: "Roboto", arial, sans-serif;
+  font-size: 70px;
 }
 
 header {
@@ -152,6 +153,11 @@ header .navbar.navbar-light .nav-link.active {
 .site-hero.overlay h1, .site-hero.overlay p {
   color: #fff;
 }
+.site-hero.overlay h4{
+  font-size: 70px;
+}
+.site-hero.overlay h4, .site-hero.overlay p {
+  color: #fff;
 
 .site-hero .site-hero-inner {
   min-height: 750px;
